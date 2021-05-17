@@ -11,3 +11,4 @@ h_r = (hetero / total) * (recessive / (total - 1)) + (recessive / total) * (hete
 recessive_total = r_r + h_h * 1 / 4 + h_r * 1 / 2
 total = 1 - recessive_total
 print(total)
+print(recessive_total)
