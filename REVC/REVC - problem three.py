@@ -14,4 +14,4 @@ for i in dna:
         print("Unknown character")
 
 reverse_comp.reverse()
-print(''.join(reverse_comp))
+print("".join(reverse_comp))

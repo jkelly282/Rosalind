@@ -1,5 +1,5 @@
-n = input('Please enter number of months: ')
-k = input('Please enter the number of rabbit pairs produced each generation: ')
+n = input("Please enter number of months: ")
+k = input("Please enter the number of rabbit pairs produced each generation: ")
 a = 0
 n_one = 0
 n_two = 0
