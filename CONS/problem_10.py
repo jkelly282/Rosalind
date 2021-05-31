@@ -41,7 +41,7 @@ for i in range(num_cols):
 df = pd.DataFrame.from_dict(all_dict)
 with open('./output.txt', 'w') as fw:
     fw.write(''.join(common_sequence))
-    fw.write('\n')
+    fw.write('\nt')
     fw.write(df.set_index('A').T.to_string())
 
 print(''.join(common_sequence))
