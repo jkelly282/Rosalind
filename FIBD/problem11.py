@@ -16,6 +16,7 @@ def calculate_number_rabbits(generations, mortality_rate):
         current_gen[i] = 0
     new_rabbits = 0
     for i in range(generations):
+        print(i)
         if i == 0:
             current_gen[1] = 1
         elif i == 1:
