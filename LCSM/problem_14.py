@@ -39,8 +39,8 @@ fasta = list(filter(None, fasta))
 sequences = [Fasta(sequence) for sequence in fasta]
 
 check = False
-kmer_length = 500
-# int(min([sequence.sequence_length for sequence in sequences]))
+kmer_length = int(min([sequence.sequence_length for sequence in sequences]))
+
 common_kmers = set()
 while check is False:
     while not common_kmers:
