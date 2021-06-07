@@ -12,16 +12,30 @@ GGGTGGG
 """
 
 
-def caculate_graphs():
+class Fasta:
+    def __init__(self, sequnece, k):
+        identifier, dna = sequnece.split('/', 1)
+        self.sequence = dna.rstrip('/')
+        self.identifier = identifier
+        self.prefix = self.sequence[:k]
+        self.suffix = self.sequence[-k:]
+
+
+def caculate_graphs(k):
     with open('test.txt') as f:
-        fasta = f.read()
+        fasta = f.read().splitlines()
+    fasta = "/".join(fasta)
     fasta = fasta.split('>')
-    sequences = {}
-    for i in fasta:
-        identifier, value = i
-        sequences[identifier] = value
-    print(sequences)
+    fasta = list(filter(None, fasta))
+    sequences = [Fasta(sequence, k) for sequence in fasta]
+    for i in sequences:
+        for j in sequences:
+            if i != j:
+                if i.prefix == j.suffix:
+                    print(j.identifier, i.identifier)
+
 
 
 if __name__ == '__main__':
-    caculate_graphs()
+    k = 3
+    caculate_graphs(k)
