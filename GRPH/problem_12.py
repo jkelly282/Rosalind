@@ -22,7 +22,7 @@ class Fasta:
 
 
 def caculate_graphs(k):
-    with open('test.txt') as f:
+    with open('test2.txt') as f:
         fasta = f.read().splitlines()
     fasta = "/".join(fasta)
     fasta = fasta.split('>')

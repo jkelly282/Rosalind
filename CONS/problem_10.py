@@ -2,7 +2,7 @@ import numpy as np
 from collections import Counter, defaultdict
 import pandas as pd
 
-# with open('test.txt') as f:
+# with open('test2.txt') as f:
 with open('rosalind_cons.txt') as f:
     fasta = f.read().split('\n')
 
