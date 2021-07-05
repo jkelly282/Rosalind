@@ -4,8 +4,12 @@ from collections import defaultdict
 
 def parse_args():
     parser = argparse.ArgumentParser()
-    parser.add_argument('-n', dest="generations", default=83, help="Number of generations")
-    parser.add_argument('-d', dest="mortality_rate", default=20, help="Number of months Rabbits alive")
+    parser.add_argument(
+        "-n", dest="generations", default=83, help="Number of generations"
+    )
+    parser.add_argument(
+        "-d", dest="mortality_rate", default=20, help="Number of months Rabbits alive"
+    )
     args = parser.parse_args()
     return args
 
@@ -40,7 +44,7 @@ def calculate_number_rabbits(generations, mortality_rate):
     return current_gen
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     args = parse_args()
     current_gen = calculate_number_rabbits(args.generations, args.mortality_rate)
     total = 0

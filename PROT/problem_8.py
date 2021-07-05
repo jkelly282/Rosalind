@@ -75,5 +75,5 @@ with open("rosalind_prot.txt") as f:
 protein = []
 
 for i in range(0, len(dna), 3):
-    protein.append(translate.get(dna[i:i + 3]))
+    protein.append(translate.get(dna[i: i + 3]))
 print("".join(protein))

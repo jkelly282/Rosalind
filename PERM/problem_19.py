@@ -1,7 +1,7 @@
 numbers = []
 final = []
 final_final = []
-num = int(input('what is the number? '))
+num = int(input("what is the number? "))
 for i in range(1, num + 1):
     numbers.append(i)
 
@@ -35,4 +35,4 @@ for i in final_final:
     temp = []
     for j in i:
         temp.append(j)
-    print(' '.join(temp))
+    print(" ".join(temp))

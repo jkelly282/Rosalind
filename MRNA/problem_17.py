@@ -22,7 +22,7 @@ translate = {
     "W": 1,
 }
 
-with open('test.txt') as fw:
+with open("test.txt") as fw:
     protein = fw.read()
 
 total = 1

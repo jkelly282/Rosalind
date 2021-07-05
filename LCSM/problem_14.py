@@ -12,7 +12,7 @@ ATACA
 
 class Fasta:
     def __init__(self, sequnece):
-        identifier, dna = sequnece.split('/', 1)
+        identifier, dna = sequnece.split("/", 1)
         dna = dna.replace("/", "")
         self.sequence = dna
         self.identifier = identifier
@@ -25,16 +25,16 @@ class Fasta:
     def generate_kmer(self, kmer):
         kmers = set()
         for i in range(self.sequence_length):
-            nkmer = self.sequence[i:i + kmer]
+            nkmer = self.sequence[i: i + kmer]
             if len(nkmer) == kmer:
                 kmers.add(nkmer)
             self.kmers = kmers
 
 
-with open('test3.txt') as f:
+with open("test3.txt") as f:
     fasta = f.read().splitlines()
 fasta = "/".join(fasta)
-fasta = fasta.split('>')
+fasta = fasta.split(">")
 fasta = list(filter(None, fasta))
 sequences = [Fasta(sequence) for sequence in fasta]
 

@@ -6,13 +6,18 @@ class Fasta:
     def __init__(self, overall_info):
         self.overall_info = overall_info
         # self.id = ''.join(overall_info.split('|')[1])
-        self.sequence = ''.join([line for line in overall_info.split('\n') if not '>' in line])
+        self.sequence = "".join(
+            [line for line in overall_info.split("\n") if not ">" in line]
+        )
 
     def as_dict(self):
         return {i: j for i, j in enumerate(self.sequence)}
 
     def find_motifs(self):
-        return [(str(m.start() + 1)) for m in re.finditer('(?=[N][^P][S|T][^P])', self.sequence)]
+        return [
+            (str(m.start() + 1))
+            for m in re.finditer("(?=[N][^P][S|T][^P])", self.sequence)
+        ]
 
 
 def protein_finder(dna):
@@ -20,10 +25,10 @@ def protein_finder(dna):
     return_proteins = []
     orf = False
     for i in range(0, len(dna), 3):
-        aa = translate.get(dna[i:i + 3])
-        if aa == 'M':
+        aa = translate.get(dna[i: i + 3])
+        if aa == "M":
             orf = True
-        elif aa == 'Stop':
+        elif aa == "Stop":
             orf = False
             if protein:
                 return_proteins.append("".join(protein))
@@ -132,21 +137,21 @@ for i in range(3):
     reverse = protein_finder(rdna[i:])
     for j in foward:
         counter_sequence = Counter(j)
-        number_of_start = counter_sequence.get('M')
+        number_of_start = counter_sequence.get("M")
         if number_of_start > 1:
             for p, q in enumerate(j):
                 if p != 0:
-                    if q == 'M':
+                    if q == "M":
                         overall_proteints.add(j[p:])
         overall_proteints.add(j)
 
     for k in reverse:
         counter_sequence = Counter(k)
-        number_of_start = counter_sequence.get('M')
+        number_of_start = counter_sequence.get("M")
         if number_of_start > 1:
             for p, q in enumerate(k):
                 if p != 0:
-                    if q == 'M':
+                    if q == "M":
                         overall_proteints.add(k[p:])
         overall_proteints.add(k)
 

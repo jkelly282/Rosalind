@@ -8,7 +8,7 @@ with open("rosalind_subs.txt") as f:
 answer = []
 
 for i, j in enumerate(dna):
-    if dna[i:i + len(problem_motif)] == problem_motif:
+    if dna[i: i + len(problem_motif)] == problem_motif:
         answer.append(i + 1)
 
-print(' '.join(str(x) for x in answer))
+print(" ".join(str(x) for x in answer))
